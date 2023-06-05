@@ -48,10 +48,24 @@ int factorial(int n)
 	return n*factorial(n-1);
 	}
 }
+int lcm(n,n1)
+{
+	static int least = 1;
+	if(least % n==0 && least % n1==0)
+	{
+		return least;
+	}
+	else
+	{
+		least++;
+		lcm(n,n1);
+		return least;
+	}
+}
 int main()
 {
 	int ch;
-	printf("Enter your choice : 1 OR 2 OR 3 : ");
+	printf("Enter your choice : 1 OR 2 OR 3 OR 4 : ");
 	scanf("%d", &ch);
 	lable:
 	switch (ch)
@@ -60,24 +74,32 @@ int main()
 			printf("\nEnter a number : ");
 			scanf("%d", &num);
 			printf("\n%d", febonacci(num));
-			break;
+		break;
 		case 2:
 			printf("\nEnter two numbers : ");
 			scanf("%d %d", &num1, &num2);
 			printf("\nHCF of %d and %d is : %d",num1, num2, Hcf(num1,num2));
-			break;
+		break;
 		case 3:
 			printf("\nEnter a number : ");
 			scanf("%d", &n);
 			printf("\nFactorial of %d is = %d",n,factorial(n));
-			break;
+		break;
+		case 4:
+			printf("\nEnter a number : ");
+			scanf("%d", &n);
+			int n1;
+			printf("\nEnter 2 number : ");
+			scanf("%d", &n1);
+			printf("\nLCM of %d and %d is = %d",n,n1,lcm(n,n1));
+		break;
 		default:
 			printf("\nInvalid Choice!");
 			break;
 	}
 	printf("\nEnter choice again : ");
 	scanf("%d", &ch);
-	if(ch==1 || ch==2|| ch==3)
+	if(ch==1 || ch==2|| ch==3 || ch==4)
 	{
 		goto lable;
 	}

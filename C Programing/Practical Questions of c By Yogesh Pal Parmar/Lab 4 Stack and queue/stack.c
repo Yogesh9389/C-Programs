@@ -66,7 +66,7 @@ void display()
 }
 int main()
 {
-	
+	printf("Yogesh Pal Parmar MCA 2B 70");
 	s.top = -1;
 	int ch;
 	do
